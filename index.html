@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento Automotivo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="cs/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo"><i class="fas fa-car"></i> AutoSchedule</div>
+        <nav>
+            <a href="#" class="active">Agendar</a>
+            <a href="#">Meus agendamentos</a>
+            <a href="#">Serviços</a>
+            <a href="#">Ajuda</a>
+        </nav>
+        <div class="user-profile">
+            <img src="https://ui-avatars.com/api/?name=Miguel&background=0d6efd&color=fff" alt="User">
+            <span>Miguel Toledo</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="agendamento-grid">
+            
+            <!-- Lado Esquerdo: Passos -->
+            <div class="passos">
+                <div class="header-passos">
+                    <h1>Agende seu atendimento</h1>
+                    <p>Escolha o serviço, selecione a data e o horário disponível e confirme — leva menos de um minuto.</p>
+                </div>
+
+                <!-- Passo 1 -->
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <h2>Escolha o serviço</h2>
+                    <div class="servicos-grid">
+                        <div class="servico-card" data-servico="Atendimento Básico" data-preco="R$ 90,00" data-duracao="30 min">
+                            <i class="fas fa-wrench"></i>
+                            <h3>Atendimento Básico</h3>
+                            <p>Orientação rápida para dúvidas pontuais e ajustes simples.</p>
+                            <span class="preco">30 min · R$ 90</span>
+                        </div>
+                        <div class="servico-card" data-servico="Manutenção Preventiva" data-preco="R$ 180,00" data-duracao="1h">
+                            <i class="fas fa-cogs"></i>
+                            <h3>Manutenção Preventiva</h3>
+                            <p>Revisão completa com checagem de itens e troca de peças leves.</p>
+                            <span class="preco">1h · R$ 180</span>
+                        </div>
+                        <div class="servico-card" data-servico="Diagnóstico Completo" data-preco="R$ 320,00" data-duracao="1h 30min">
+                            <i class="fas fa-laptop-medical"></i>
+                            <h3>Diagnóstico Completo</h3>
+                            <p>Análise detalhada com relatório técnico e plano de correção.</p>
+                            <span class="preco">1h 30min · R$ 320</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passo 2 -->
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <h2>Escolha a data e o horário</h2>
+                    <div class="calendario-container">
+                        <div class="calendario-header">
+                            <button><i class="fas fa-chevron-left"></i></button>
+                            <span>Outubro 2026</span>
+                            <button><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="dias-semana">
+                            <span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span>
+                        </div>
+                        <div class="calendario-grid" id="calendario-dias">
+                            <!-- Dias gerados via JS -->
+                        </div>
+                    </div>
+                    
+                    <div class="horarios-container" id="horarios-container" style="display: none;">
+                        <h3>Horários disponíveis para o dia selecionado:</h3>
+                        <div class="horarios-grid" id="horarios-grid">
+                            <!-- Horários gerados via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lado Direito: Resumo -->
+            <div class="resumo">
+                <div class="resumo-header">
+                    <h2>Resumo do agendamento</h2>
+                </div>
+                <div class="resumo-content">
+                    <div class="resumo-item">
+                        <span>Serviço</span>
+                        <strong id="res-servico">Nenhum selecionado</strong>
+                    </div>
+                    <div class="resumo-item">
+                        <span>Data</span>
+                        <strong id="res-data">-</strong>
+                    </div>
+                    <div class="resumo-item">
+                        <span>Horário</span>
+                        <strong id="res-horario">-</strong>
+                    </div>
+                    <div class="resumo-item">
+                        <span>Local</span>
+                        <strong>Unidade Centro</strong>
+                    </div>
+                    <hr>
+                    <div class="resumo-total">
+                        <span>Total</span>
+                        <strong id="res-total">R$ 0,00</strong>
+                    </div>
+                </div>
+                <button id="btn-confirmar" class="btn-confirmar" disabled>Confirmar Agendamento</button>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
